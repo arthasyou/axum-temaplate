@@ -11,7 +11,14 @@ A clean and minimal Axum web framework template with JWT authentication, Swagger
 cargo install cargo-generate
 
 # Create a new project from this template
-cargo generate --git https://github.com/arthasyou/axum-template.git --name my-project
+cargo generate --git https://github.com/arthasyou/axum-temaplate.git --name my-project
+
+# If you encounter authentication issues due to GitHub API rate limits, use:
+cargo generate --git https://github.com/arthasyou/axum-temaplate.git --branch main --name my-project
+
+# Or clone first and use local path (no authentication needed):
+git clone https://github.com/arthasyou/axum-temaplate.git
+cargo generate --path ./axum-temaplate --name my-project
 ```
 
 ### Method 2: Using the install script
@@ -24,7 +31,7 @@ curl -sSL https://raw.githubusercontent.com/arthasyou/axum-template/main/install
 ### Method 3: Manual clone
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/axum-template.git my-project
+git clone https://github.com/arthasyou/axum-template.git my-project
 cd my-project
 rm -rf .git
 git init
