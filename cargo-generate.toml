@@ -1,0 +1,25 @@
+[template]
+cargo_generate_version = "0.21.0"
+
+[placeholders.name]
+prompt = "What is the name of your project?"
+type = "string"
+regex = "^[a-zA-Z][a-zA-Z0-9_-]*$"
+
+[placeholders.author]
+prompt = "Author name"
+type = "string"
+default = "Your Name"
+
+[placeholders.email]
+prompt = "Author email"
+type = "string"
+default = "you@example.com"
+
+[placeholders.description]
+prompt = "Project description"
+type = "string"
+default = "A new Axum web service"
+
+[conditional.'crud_example'.placeholders]
+crud_example = { type = "bool", prompt = "Include CRUD example API?", default = true }

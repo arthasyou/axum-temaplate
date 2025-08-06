@@ -1,0 +1,9 @@
+# Files to ignore when generating from template
+.git/
+target/
+logs/
+config/services.toml
+Cargo.lock
+TEMPLATE_README.md
+install.sh
+.cargo-generate-ignore

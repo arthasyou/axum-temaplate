@@ -1,7 +1,9 @@
 [package]
-name = "axum-template"
+name = "{{name}}"
 version = "0.1.0"
 edition = "2024"
+authors = ["{{author}} <{{email}}>"]
+description = "{{description}}"
 
 [dependencies]
 tracing = "0.1"

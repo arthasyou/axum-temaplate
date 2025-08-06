@@ -1,95 +1,143 @@
 # Axum Template
 
-一个简洁的 Axum Web 框架模板项目，提供了基础的项目结构和示例 API。
+A clean and minimal Axum web framework template with JWT authentication, Swagger UI, and a well-structured project layout.
 
-## 特性
+## 🚀 Quick Start
 
-- 基于 Axum Web 框架
-- JWT 认证中间件
-- 结构化的错误处理
-- Swagger UI 文档集成 (utoipa)
-- 日志记录 (tracing)
-- CORS 支持
-- 示例 CRUD API
+### Method 1: Using cargo-generate (Recommended)
 
-## 项目结构
+```bash
+# Install cargo-generate (only needed once)
+cargo install cargo-generate
+
+# Create a new project from this template
+cargo generate --git https://github.com/YOUR_USERNAME/axum-template.git --name my-project
+```
+
+### Method 2: Using the install script
+
+```bash
+# One-liner to create a new project
+curl -sSL https://raw.githubusercontent.com/YOUR_USERNAME/axum-template/main/install.sh | sh -s -- my-project
+```
+
+### Method 3: Manual clone
+
+```bash
+git clone https://github.com/YOUR_USERNAME/axum-template.git my-project
+cd my-project
+rm -rf .git
+git init
+# Manually update the project name in Cargo.toml
+```
+
+## Features
+
+- 🚀 **Axum Web Framework** - Fast and ergonomic web framework
+- 🔐 **JWT Authentication** - Built-in JWT middleware for secure APIs
+- 📚 **Swagger UI** - Auto-generated API documentation with utoipa
+- 📝 **Structured Logging** - Logging with tracing and file output
+- 🔧 **Error Handling** - Consistent error responses with proper HTTP status codes
+- 🌐 **CORS Support** - Pre-configured CORS middleware
+- ✨ **Example CRUD API** - Working example with best practices
+
+## Project Structure
 
 ```
 src/
-├── error/          # 错误处理模块
-├── handlers/       # 请求处理器
-├── models/         # 数据模型
-├── routes/         # 路由定义
-├── logging.rs      # 日志配置
-├── settings.rs     # 配置管理
-└── main.rs         # 应用入口
+├── error/          # Error handling and custom error types
+├── handlers/       # Request handlers (business logic)
+├── models/         # Data models and DTOs
+├── routes/         # Route definitions and OpenAPI docs
+├── logging.rs      # Logging configuration
+├── settings.rs     # Application configuration
+└── main.rs         # Application entry point
 ```
 
-## 快速开始
+## Getting Started
 
-1. 复制配置文件：
+1. Copy the configuration file:
 ```bash
 cp config/services-example.toml config/services.toml
 ```
 
-2. 运行项目：
+2. Run the application:
 ```bash
 cargo run
 ```
 
-3. 访问 Swagger UI：
+3. Access Swagger UI:
 ```
 http://localhost:19878/swagger-ui/
 ```
 
-## 示例 API
+## Example API Endpoints
 
-项目包含一个示例 API，展示了基本的 CRUD 操作：
+The template includes a complete CRUD example:
 
-- `GET /example/health` - 健康检查（无需认证）
-- `GET /example/items` - 获取所有项目
-- `GET /example/items/{id}` - 获取单个项目
-- `POST /example/items` - 创建新项目
-- `DELETE /example/items/{id}` - 删除项目
+- `GET /example/health` - Health check (no auth required)
+- `GET /example/items` - List all items
+- `GET /example/items/{id}` - Get a specific item
+- `POST /example/items` - Create a new item
+- `DELETE /example/items/{id}` - Delete an item
 
-除了健康检查外，其他端点都需要 JWT 认证。在请求头中添加：
+All endpoints (except health check) require JWT authentication. Include the token in the Authorization header:
 ```
 Authorization: Bearer <your-jwt-token>
 ```
 
-## 配置
+## Configuration
 
-主要配置文件位于 `config/services.toml`：
+The main configuration file is `config/services.toml`:
 
-- `http.port` - HTTP 服务端口
-- `jwt.*` - JWT 认证相关配置
+- `http.port` - HTTP server port (default: 19878)
+- `jwt.*` - JWT authentication settings
 
-## 依赖
+## Dependencies
 
-- `axum` - Web 框架
-- `tokio` - 异步运行时
-- `tracing` - 日志记录
-- `serde` - 序列化/反序列化
-- `validator` - 请求验证
-- `utoipa` - OpenAPI 文档生成
-- `toolcraft-*` - 实用工具库
+- `axum` - Web framework
+- `tokio` - Async runtime
+- `tracing` - Structured logging
+- `serde` - Serialization/deserialization
+- `validator` - Request validation
+- `utoipa` - OpenAPI documentation generation
+- `toolcraft-*` - Utility libraries for common patterns
 
-## 扩展指南
+## Extending the Template
 
-1. **添加新的 API**：
-   - 在 `models/` 中定义数据模型
-   - 在 `handlers/` 中实现业务逻辑
-   - 在 `routes/` 中定义路由和 OpenAPI 文档
+### Adding New APIs
 
-2. **添加数据库**：
-   - 添加数据库依赖（如 sqlx）
-   - 在 `settings.rs` 中添加数据库配置
-   - 创建数据库连接池并注入到路由中
+1. Define your data models in `models/`
+2. Implement business logic in `handlers/`
+3. Define routes and OpenAPI documentation in `routes/`
 
-3. **自定义中间件**：
-   - 在适当的位置创建中间件模块
-   - 在路由配置中添加中间件层
+### Adding a Database
 
-## 许可证
+1. Add database dependencies (e.g., `sqlx`)
+2. Add database configuration to `settings.rs`
+3. Create a connection pool and inject it into your routes
+
+### Custom Middleware
+
+1. Create your middleware module
+2. Add it to the router in `routes/mod.rs`
+
+## Development
+
+```bash
+# Format code
+cargo fmt
+
+# Run linter
+cargo clippy
+
+# Run tests
+cargo test
+
+# Check code without building
+cargo check
+```
+
+## License
 
 MIT
