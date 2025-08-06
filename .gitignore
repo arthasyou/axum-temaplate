@@ -5,9 +5,3 @@
 **/.DS_Store
 
 .claude
-
-# Test directories created during CI/CD or local testing
-test-project/
-test-generate/
-test-local/
-test-interactive/
