@@ -1,9 +1,9 @@
 [package]
-name = "axum-template"
+name = "{{name}}"
 version = "0.1.0"
 edition = "2024"
-authors = ["ancient <gamesworldcraft@gmail.com>"]
-description = "axum-template is a template for axum projects with JWT authentication, OpenAPI documentation, and more."
+authors = ["{{author}} <{{email}}>"]
+description = "{{description}}"
 
 [dependencies]
 tracing = "0.1"

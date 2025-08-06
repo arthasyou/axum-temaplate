@@ -1,10 +1,9 @@
 [template]
 cargo_generate_version = ">=0.21.0"
+exclude = ["target", "test-*", ".git", ".github/workflows/template-test.yml", "Cargo.toml"]
 
-[placeholders.name]
-prompt = "What is the name of your project?"
-type = "string"
-regex = "^[a-zA-Z][a-zA-Z0-9_-]*$"
+# Note: 'name' is handled automatically by cargo-generate as the project name
+# We don't need to define it as a placeholder
 
 [placeholders.author]
 prompt = "Author name"
