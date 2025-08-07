@@ -1,2 +1,1 @@
-file::delete("Cargo.toml");
-file::rename("Template.toml", "Cargo.toml");
+file::delete("install.sh", "README.md", "LICENSE", ".github");
