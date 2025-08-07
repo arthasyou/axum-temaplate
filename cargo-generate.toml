@@ -11,6 +11,10 @@ exclude = [
     "Cargo.toml",
 ]
 
+[hooks]
+pre = ["fix.rhai"]
+# post = ["fix.rhai"]
+
 # Note: 'name' is handled automatically by cargo-generate as the project name
 # We don't need to define it as a placeholder
 
@@ -31,6 +35,3 @@ default = "A new Axum web service"
 
 [conditional.'crud_example'.placeholders]
 crud_example = { type = "bool", prompt = "Include CRUD example API?", default = true }
-
-[hooks]
-pre = ["fix.rhai"]
