@@ -1,5 +1,6 @@
 # Files to ignore when generating from template
 .git/
+.github/
 target/
 logs/
 config/services.toml
