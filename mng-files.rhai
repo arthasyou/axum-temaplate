@@ -1,1 +1,4 @@
-file::delete("install.sh", "README.md", "LICENSE");
+file::delete("install.sh");
+file::delete("README.md");
+file::delete("LICENSE");
+file::delete(".github");
