@@ -4,10 +4,11 @@ exclude = [
     "target",
     "test-*",
     ".git",
-    ".github/workflows/template-test.yml",
+    ".github",
     "LICENSE",
     "README.md",
     "install.sh",
+    "Cargo.toml",
 ]
 
 # Note: 'name' is handled automatically by cargo-generate as the project name
