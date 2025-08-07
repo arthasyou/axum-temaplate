@@ -31,3 +31,6 @@ default = "A new Axum web service"
 
 [conditional.'crud_example'.placeholders]
 crud_example = { type = "bool", prompt = "Include CRUD example API?", default = true }
+
+[hooks]
+pre = ["fix.rhai"]
