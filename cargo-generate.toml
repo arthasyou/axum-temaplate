@@ -1,6 +1,14 @@
 [template]
 cargo_generate_version = ">=0.21.0"
-exclude = ["target", "test-*", ".git", ".github/workflows/template-test.yml"]
+exclude = [
+    "target",
+    "test-*",
+    ".git",
+    ".github/workflows/template-test.yml",
+    "LICENSE",
+    "README.md",
+    "install.sh",
+]
 
 # Note: 'name' is handled automatically by cargo-generate as the project name
 # We don't need to define it as a placeholder
