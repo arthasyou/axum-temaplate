@@ -1,1 +1,1 @@
-file::delete("install.sh", "README.md", "LICENSE", ".github");
+file::delete("install.sh", "README.md", "LICENSE");
